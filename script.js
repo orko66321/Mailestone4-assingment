@@ -62,6 +62,7 @@ document.getElementById("main-tag").addEventListener("click", function(event) {
         const companyName = card.querySelector(".companyName").innerText;
         const position = card.querySelector(".position").innerText;
         const description = card.querySelector(".description").innerText;
+        const statusText = card.querySelector(".statu").innerText;
         const location = card.querySelector(".location") ? card.querySelector(".location").innerText : ""; 
         const salary = card.querySelector(".salary") ? card.querySelector(".salary").innerText : "";
         const isInterview = target.classList.contains("interview-btn");
@@ -102,7 +103,7 @@ function renderFilteredCards(list, statusLabel) {
     
     if (list.length === 0) {
         filteredCardsSection.innerHTML = `
-        <div class="text-center mt-10 text-gray-500 flex flex-col items-center justify-center shadow-lg rounded-lg p-100 ">
+        <div class="text-center mt-10 text-gray-500 flex flex-col items-center justify-center  rounded-lg p-10">
             <p class="text-8xl text-center"><i class="fa-solid fa-file-lines"></i></p>
             <p class="mt-4 text-center">No jobs available</p>
             <p class="text-gray-500 text-center text-[14px]">Check back soon for new job opportunities</p>
@@ -112,7 +113,9 @@ function renderFilteredCards(list, statusLabel) {
 
 for (const item of list) {
     const div = document.createElement("div");
+
     div.className = "card flex justify-between flex-row bg-gray-100 rounded-lg p-9 mt-4";
+    
 
     div.innerHTML = `
         <div class="card-left space-y-5">
@@ -136,7 +139,8 @@ for (const item of list) {
         <div class="card-right">
             <button class="btn-delete btn"><i class="fa-regular fa-trash-can"></i></button>
         </div>`;
-
+    
+   
     filteredCardsSection.appendChild(div);
 }
 }
