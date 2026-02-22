@@ -103,7 +103,7 @@ function renderFilteredCards(list, statusLabel) {
     
     if (list.length === 0) {
         filteredCardsSection.innerHTML = `
-        <div class="text-center mt-10 text-gray-500 flex flex-col items-center justify-center  rounded-lg p-10">
+        <div class="text-center mt-10 text-gray-500 flex flex-col items-center justify-center h-screen rounded-lg p-10">
             <p class="text-8xl text-center"><i class="fa-solid fa-file-lines"></i></p>
             <p class="mt-4 text-center">No jobs available</p>
             <p class="text-gray-500 text-center text-[14px]">Check back soon for new job opportunities</p>
@@ -138,7 +138,9 @@ for (const item of list) {
         </div>
         <div class="card-right">
             <button class="btn-delete btn"><i class="fa-regular fa-trash-can"></i></button>
-        </div>`;
+        </div>
+        
+        `;
     
    
     filteredCardsSection.appendChild(div);
